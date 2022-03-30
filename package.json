@@ -4,6 +4,7 @@
 	"description": "Add custom command to compile and run at the same time",
 	"version": "0.0.1",
 	"publisher": "cursedarcangel",
+	"repository": "https://github.com/cursedarcangel/AutoRun",
 	"engines": {
 		"vscode": "^1.65.0"
 	},
@@ -23,7 +24,19 @@
 		{
 			"command": "autorun.configure",
 			"title": "Configure AutoRun"
-		}]
+		}],
+		"configuration":[
+			{
+				"title": "AutoRun",
+				"properties": {
+					"autorun.config": {
+						"type": "string",
+						"default": "string",
+						"description": "The command to compile and run"
+					}
+				}
+			}
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
