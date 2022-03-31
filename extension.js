@@ -5,8 +5,8 @@ const vscode = require('vscode');
  */
 function activate(context) {
 
-	let compileandrun = vscode.commands.registerCommand('autorun.compileandrun', function () {
-		let cmd = vscode.workspace.getConfiguration().inspect('autorun.config').workspaceValue;
+	let compileandrun = vscode.commands.registerCommand('onerun.compileandrun', function () {
+		let cmd = vscode.workspace.getConfiguration().inspect('onerun.config').workspaceValue;
 		if (vscode.window.terminals.length == 0) {
 			vscode.window.createTerminal("Terminal");
 			vscode.window.terminals[0].show();
@@ -16,7 +16,7 @@ function activate(context) {
 		vscode.window.terminals[0].sendText(cmd);
 	});
 
-	let configure = vscode.commands.registerCommand('autorun.configure', function () {
+	let configure = vscode.commands.registerCommand('onerun.configure', function () {
 		if (vscode.workspace.workspaceFolders[0] == null) {
 			vscode.window.showErrorMessage("Please open a project folder");
 		} else {
@@ -25,7 +25,7 @@ function activate(context) {
 					title: "What is the command to compile and run?",
 					placeHolder: "./a.out"
 				});
-				vscode.workspace.getConfiguration().update('autorun.config', cmd);
+				vscode.workspace.getConfiguration().update('onerun.config', cmd);
 			}
 			getConfig();
 		}

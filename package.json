@@ -1,10 +1,10 @@
 {
-	"name": "autorun",
-	"displayName": "AutoRun",
+	"name": "onerun",
+	"displayName": "OneRun",
 	"description": "Add custom command to compile and run at the same time",
 	"version": "0.0.1",
 	"publisher": "cursedarcangel",
-	"repository": "https://github.com/cursedarcangel/AutoRun",
+	"repository": "https://github.com/cursedarcangel/OneRun",
 	"engines": {
 		"vscode": "^1.65.0"
 	},
@@ -12,24 +12,24 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:autorun.compileandrun",
-		"onCommand:autorun.configure"
+        "onCommand:onerun.compileandrun",
+		"onCommand:onerun.configure"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [{
-            "command": "autorun.compileandrun",
+            "command": "onerun.compileandrun",
             "title": "Compile and Run"
 		},
 		{
-			"command": "autorun.configure",
-			"title": "Configure AutoRun"
+			"command": "onerun.configure",
+			"title": "Configure OneRun"
 		}],
 		"configuration":[
 			{
-				"title": "AutoRun",
+				"title": "OneRun",
 				"properties": {
-					"autorun.config": {
+					"onerun.config": {
 						"type": "string",
 						"default": "string",
 						"description": "The command to compile and run"
